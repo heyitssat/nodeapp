@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    <title><%= title %></title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+        angular.module('ui.bootstrap.demo', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+        angular.module('ui.bootstrap.demo').controller('AccordionDemoCtrl', function ($scope, $sce) {
+            $scope.groups = [
+                {
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
+                },
+                {
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
+                },
+
+                {
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
+                },
+                {
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
+                },
+                {
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
+                },
+                {
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
+                },
+                {
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
+                },
+                {
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
+                },
+                {
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
+                },
+                {
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
+                }
+            ];
+
+            $scope.htmlPopover = $sce.trustAsHtml('<b style="color: red">I can</b> have <div class="label label-success">HTML</div> content');
+    });
+    </script>
+  </head>
+  <body>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div ng-controller="AccordionDemoCtrl" >
+      <a href="login"> login</a>
+      <uib-accordion close-others="false">
+                   <div uib-accordion-group class="panel-default" heading="{{group.title}}" ng-repeat="group in groups">
+                        {{group.content}}
+                     <div>
+                       <button style="float:right" uib-popover-html="htmlPopover"  popover-placement="top" class="btn btn-default">Share</button>
+                     </div>
+                     </div>
+      </uib-accordion>
+    </div>
+  </body>
+
+</html>

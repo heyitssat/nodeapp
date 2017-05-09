@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title><%= title %></title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="https://code.angularjs.org/1.6.1/angular-route.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body ng-app="ui.bootstrap.demo">
+
+    <ng-view>
+
+    </ng-view>
+    Temp
+
+
+</body>
+<script>
+    var app = angular.module("ui.bootstrap.demo", ["ngRoute"]);
+
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl : 'login.html' ,
+            });
+    });
+</script>
+</html>
