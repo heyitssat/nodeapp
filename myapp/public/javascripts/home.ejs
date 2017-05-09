@@ -1,0 +1,11 @@
+<div>
+    <uib-accordion close-others="false">
+        <div uib-accordion-group class="panel-default" heading="{{group.title}}" ng-repeat="group in groups">
+            {{group.content}}
+            <div>
+                <button style="float:right" uib-popover-html="htmlPopover"  popover-placement="top" class="btn btn-default">Share</button>
+            </div>
+        </div>
+    </uib-accordion>
+    Home Page element
+</div>
